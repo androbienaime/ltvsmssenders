@@ -1,0 +1,1 @@
+<p>Un sms vous a été envoyé au numero : +{$call_prefix} {$phone}</p>

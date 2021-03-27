@@ -1,0 +1,14 @@
+{
+    "name": "lestruviens/sms",
+    "description": "envoyer des messages aux clients a l'aide d'aws",
+    "authors": [
+        {
+            "name": "Andro",
+            "email": "Andro@lestruviens.com"
+        }
+    ],
+    "require": {
+        "aws/aws-sdk-php": "^3.176",
+        "guzzlehttp/guzzle": "~5.0"
+    }
+}
