@@ -10,5 +10,10 @@
     "require": {
         "aws/aws-sdk-php": "^3.176",
         "guzzlehttp/guzzle": "~5.0"
+    },
+    "autoload":{
+      "psr-4": {
+        "ltvsmssenders\\" : "classes/"
+      }
     }
 }

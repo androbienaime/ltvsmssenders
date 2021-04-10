@@ -25,24 +25,24 @@ class InstalledVersions
 private static $installed = array (
   'root' => 
   array (
-    'pretty_version' => '1.0.0+no-version-set',
-    'version' => '1.0.0.0',
+    'pretty_version' => 'dev-master',
+    'version' => 'dev-master',
     'aliases' => 
     array (
     ),
-    'reference' => NULL,
+    'reference' => 'cb080b4c72c304e0affa49181a283bb6ad75c634',
     'name' => 'lestruviens/sms',
   ),
   'versions' => 
   array (
     'aws/aws-sdk-php' => 
     array (
-      'pretty_version' => '3.176.2',
-      'version' => '3.176.2.0',
+      'pretty_version' => '3.178.1',
+      'version' => '3.178.1.0',
       'aliases' => 
       array (
       ),
-      'reference' => 'cfd62d9d159df12e8e1fc3c486e0a010a4c39f80',
+      'reference' => '45692b97e12a2eed540c0afd106f143aad15e622',
     ),
     'guzzlehttp/guzzle' => 
     array (
@@ -91,12 +91,12 @@ private static $installed = array (
     ),
     'lestruviens/sms' => 
     array (
-      'pretty_version' => '1.0.0+no-version-set',
-      'version' => '1.0.0.0',
+      'pretty_version' => 'dev-master',
+      'version' => 'dev-master',
       'aliases' => 
       array (
       ),
-      'reference' => NULL,
+      'reference' => 'cb080b4c72c304e0affa49181a283bb6ad75c634',
     ),
     'mtdowling/jmespath.php' => 
     array (

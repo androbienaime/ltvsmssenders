@@ -3,7 +3,9 @@
 if(!defined("_PS_VERSION_")){
     exit;
 }
-require_once _PS_MODULE_DIR_."/sms/SendSMS.php";
+require_once _PS_MODULE_DIR_."/sms/vendor/autoload.php";
+
+use ltvsmssenders\SendSMS;
 
 class Sms extends Module{
     protected $retour;
@@ -224,7 +226,7 @@ class Sms extends Module{
         );
 
         $sendSms = new SendSMS($credentials);
-        $this->retour = $sendSms->envoyerSMS(Configuration::get("LTVSMS_MESSAGE_ORDER"), $phone, Configuration::get("LTVSMS_SENDERID"));
+        $this->retour = $sendSms->send(Configuration::get("LTVSMS_MESSAGE_ORDER"), $phone, Configuration::get("LTVSMS_SENDERID"));
 
     }
 

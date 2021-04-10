@@ -1,6 +1,7 @@
 <?php
 
-require_once _PS_MODULE_DIR_."/sms/vendor/autoload.php";
+namespace ltvsmssenders;
+
 
 use Aws\Sns\SnsClient;
 use Aws\Exception\AwsException;
@@ -28,11 +29,19 @@ class SendSMS
      * @return SnsClient
      */
     public function SnsClient(){
-        $SnSClient = new SnsClient([
-            'region' => $this->region,
-            'version' => $this->version,
-            'credentials' => $this->credentials
-        ]);
+        $SnSClient = NULL;
+
+        try{
+            $SnSClient = new SnsClient([
+                'region' => $this->region,
+                'version' => $this->version,
+                'credentials' => $this->credentials
+            ]);
+
+        }catch(AwsException $e){
+            error_log($e->getMessage());
+        }
+
 
         return $SnSClient;
     }
@@ -43,7 +52,7 @@ class SendSMS
      * @param null $senderId
      * @return mixed
      */
-    public function envoyerSMS($message, $phone, $senderId = Null){
+    public function send($message, $phone, $senderId = Null){
         $args = array(
             'MessageAttributes' =>[
                 'AWS.SNS.SMS.SenderID' => [
@@ -55,10 +64,12 @@ class SendSMS
             'Message' => $message,
             'PhoneNumber' => $phone
         );
-	
-	
-        return $this->SnsClient()->publish($args);
-	
+
+
+        if($this->SnsClient() != NULL) {
+            return $this->SnsClient()->publish($args);
+        }
+
     }
 
 
