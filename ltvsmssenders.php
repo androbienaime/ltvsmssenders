@@ -3,15 +3,15 @@
 if(!defined("_PS_VERSION_")){
     exit;
 }
-require_once _PS_MODULE_DIR_."/sms/vendor/autoload.php";
+require_once _PS_MODULE_DIR_."/ltvsmssenders/vendor/autoload.php";
 
 use ltvsmssenders\SendSMS;
 
-class Sms extends Module{
+class Ltvsmssenders extends Module{
     protected $retour;
 
     public function __construct(){
-        $this->name = 'sms';
+        $this->name = 'ltvsmssenders';
         $this->tab = 'administration';
         $this->version = "1.0.0";
         $this->author = 'Andro Bien-aime';
@@ -68,7 +68,7 @@ class Sms extends Module{
     public function getContent(){
         $output = null;
 
-        if(((bool)Tools::isSubmit('submitSmsModule')) == true){
+        if(((bool)Tools::isSubmit('submitLtvsmssendersModule')) == true){
             $output .= $this->displayConfirmation($this->l('Settings updated'));
 
             $this->postProcess();
@@ -90,7 +90,7 @@ class Sms extends Module{
         $helper->default_form_language = $this->context->language->id;
         $helper->allow_employee_form_lang = Configuration::get('PS_BO_ALLOW_EMPLOYEE_FORM_LANG', 0);
         $helper->identifier = $this->identifier;
-        $helper->submit_action = "submitSmsModule";
+        $helper->submit_action = "submitLtvsmssendersModule";
         $helper->currentIndex = $this->context->link->getAdminLink("AdminModules", false)
             .'&configure='.$this->name.'&tab_module='.$this->tab.'&module_name='.$this->name;
         $helper->token = Tools::getAdminTokenLite("AdminModules");
