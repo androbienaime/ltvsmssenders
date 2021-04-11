@@ -6,7 +6,7 @@
     'aliases' => 
     array (
     ),
-    'reference' => 'cb080b4c72c304e0affa49181a283bb6ad75c634',
+    'reference' => '1c1a7e5c1dddcd9836a9a6c0935ef8e2697df05c',
     'name' => 'lestruviens/sms',
   ),
   'versions' => 
@@ -72,7 +72,7 @@
       'aliases' => 
       array (
       ),
-      'reference' => 'cb080b4c72c304e0affa49181a283bb6ad75c634',
+      'reference' => '1c1a7e5c1dddcd9836a9a6c0935ef8e2697df05c',
     ),
     'mtdowling/jmespath.php' => 
     array (
