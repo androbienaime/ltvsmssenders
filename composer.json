@@ -1,7 +1,8 @@
 {
     "name": "lestruviens/sms",
     "description": "envoyer des messages aux clients a l'aide d'aws",
-    "authors": [
+    " license " :  " AFL-3.0 " ,
+  "authors": [
         {
             "name": "Andro",
             "email": "Andro@lestruviens.com"
